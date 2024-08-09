@@ -19,7 +19,7 @@ export default function Home() {
   const navRef = useRef(null);
   const digitRef1 = useRef(null);
   const digitRef2 = useRef(null);
-  const digitRef3 = useRef(null);
+  const digitRef3 = useRef<any>(null);
   const headerH1Ref = useRef(null);
 
   const [latestNews, setLatestNews] = useState<ILatestNews[]>([
@@ -95,7 +95,7 @@ export default function Home() {
       finalDigit.textContent = "0";
       digitRef3.current!.appendChild(finalDigit);
 
-      const animate = (digit, duration, delay = 1) => {
+      const animate = (digit: any, duration: number, delay = 1) => {
         const numHeight = digit.clientHeight + 0.5 * digit.clientHeight;
         // console.log(numHeight)
         const totalDistance =
