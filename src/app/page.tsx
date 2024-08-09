@@ -403,8 +403,8 @@ export default function Home() {
             manrope.className
           )}
         >
-          " I am no bird; and no net ensnares me; I am a free human being with
-          an independent will. "
+          I am no bird; and no net ensnares me; I am a free human being with
+          an independent will.  
         </p>
 
         <p
