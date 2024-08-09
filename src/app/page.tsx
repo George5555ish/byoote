@@ -71,7 +71,7 @@ export default function Home() {
           var text = selector.innerText;
           var splitText = text
             .split("")
-            .map((char: string) => `<span>${char}</span>`)
+            .map((char: string, idx:number) => `<span key=${idx}>${char}</span>`)
             .join("");
           selector.innerHTML = splitText;
         }
@@ -369,8 +369,8 @@ export default function Home() {
           Latest News
         </p>
         <div className="flex flex-col items-center md:flex-row">
-          {latestNews.map((news) => (
-            <div className="m-4 p-2 rounded-sm shadow-2xl cursor-pointer bg-[#fff] w-full">
+          {latestNews.map((news, idx) => (
+            <div key={idx} className="m-4 p-2 rounded-sm shadow-2xl cursor-pointer bg-[#fff] w-full">
               <img src={news.img_url} alt="news img" className="rounded-sm" />
               <p
                 className={cn(
@@ -459,8 +459,8 @@ export default function Home() {
           Upcoming Events
         </p>
         <div className="flex flex-col items-center w-full">
-          {latestNews.map((news) => (
-            <div className="m-4 p-2 rounded-sm shadow-xl bg-white cursor-pointer flex flex-col md:flex-row items-start w-full transition-all hover:mb-4">
+          {latestNews.map((news, idx) => (
+            <div key={idx} className="m-4 p-2 rounded-sm shadow-xl bg-white cursor-pointer flex flex-col md:flex-row items-start w-full transition-all hover:mb-4">
               <div className="w-full md:w-[200px]">
                 <img src={news.img_url} alt="news img" className="rounded-sm" />
               </div>
