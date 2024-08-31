@@ -3,10 +3,10 @@ import React from "react";
 
 function Footer() {
   return (
-    <div className="relative my-52 mx-12 pb-52 flex flex-col md:flex-row hide-div">
-       <div className="absolute -top-36 left-10 w-[100px]">
+    <div className="relative mt-52 mx-12 flex flex-col md:flex-row hide-div">
+       {/* <div className="absolute -top-36 left-10 w-[100px]">
        <img src={'images/category/shape.svg'} />
-       </div>
+       </div> */}
       <div className="flex flex-col flex-1">
         <img
           src={"images/single-logo.svg"}
@@ -19,13 +19,13 @@ function Footer() {
           <div className="flex flex-row">
             <p className={cn(" font-bold text-[#FED0BB] pr-2")}>Email:</p>
             <p className={cn(" font-bold text-[#FED0BB]")}>
-              adaorambj@gmail.com
+            byooteworldwide@gmail.com
             </p>
           </div>
           <div className="flex flex-row">
             <p className={cn(" font-bold text-[#FED0BB]")}>Phone:</p>
             <p className={cn(" font-bold text-[#FED0BB]")}>
-              07939663606
+            07380529578
             </p>
           </div>
           {/* <div className="flex flex-row">
@@ -42,15 +42,15 @@ function Footer() {
       <div className="flex flex-col items-start flex-1">
         <p className={cn("text-3xl font-bold text-[#FED0BB] pb-4")}>Sign Up for Our NewsLetter</p>
         <div className="flex flex-col">
-          <input type="text" placeholder="Email" name="email" className="p-4  flex flex-1 shadow-md rounded-sm" />
-          <button className="text-[#540910] bg-[#FED0BB] p-3 my-4 rounded-sm shadow-2xl">
+          <input type="text" placeholder="Email" name="email" className="p-4 w-full flex flex-1 shadow-md rounded-sm" />
+          <button className="text-[#540910] bg-[#FED0BB] p-3 my-4 rounded-sm shadow-2xl max-w-[200px]">
             Sign Up
           </button>
         </div>
       </div>
-      <div className="absolute bottom-24 right-5 w-[100px]">
+      {/* <div className="absolute bottom-24 right-5 w-[100px]">
        <img src={'images/category/shape.svg'} />
-       </div>
+       </div> */}
     </div>
   );
 }

@@ -25,9 +25,13 @@
   display: flex;
   justify-content: space-between;
 }
-.phoneNumber ul li:hover {
+.phoneNumber{
+  background:rgba(84, 9, 16,0.75);
+  border-radius: 25px;
+}
+.phoneNumber ul a:hover {
 transition: 0.45s ease;
-  color:#b4abed;
+  color:#FED0BB;
 }
 .menu-overlay-bar {
   position: fixed;

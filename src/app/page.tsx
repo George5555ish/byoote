@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 import gsap from "gsap";
 import { Linkedin, Facebook, Instagram } from "lucide-react";
 import Footer from "@/components/footer";
+import ResizeHOC from "@/components/ResizeHOC";
 const platpyi = Edu_QLD_Beginner({ subsets: ["latin"], weight: "400" });
 const manrope = Manrope({ subsets: ["latin"], weight: ["400", "600", "800"] });
 
@@ -71,7 +72,9 @@ export default function Home() {
           var text = selector.innerText;
           var splitText = text
             .split("")
-            .map((char: string, idx:number) => `<span key=${idx}>${char}</span>`)
+            .map(
+              (char: string, idx: number) => `<span key=${idx}>${char}</span>`
+            )
             .join("");
           selector.innerHTML = splitText;
         }
@@ -149,7 +152,6 @@ export default function Home() {
         duration: 1,
         ease: "power4.inOut",
         opacity: 0,
-        y: -10,
         delay: 11,
         onComplete: () => {
           setTimeout(() => {
@@ -174,8 +176,8 @@ export default function Home() {
         duration: 2,
         ease: "power4.inOut",
         opacity: 1,
-        scale: 1.15,
-        y: 10,
+        scale: 1,
+        y: 0,
         paddingTop: 20,
         delay: 12,
       });
@@ -323,9 +325,9 @@ export default function Home() {
         </div>
       </section>
 
-      <div className="max-w-[100vw] h-[100vh] main-content">
+      <div className="main-content w-full max-w-full">
         <div className="main-cnt-header">
-          <h1
+          {/* <h1
             ref={headerH1Ref}
             className={cn(
               "text-2xl md:text-9xl font-bold text-[#FED0BB]",
@@ -333,18 +335,18 @@ export default function Home() {
             )}
           >
             BYOOTE
-          </h1>
-          <div className="site-info text-[#FED0BB]">
-            <p>Changing the world, one woman at a time</p>
+          </h1> */}
+          <div className="site-info text-[#FED0BB] text-6xl font-bold">
+            <p>Empower a Woman</p>
           </div>
           <div className="socials">
-            <div className="social">
+            <div className="social text-[#FED0BB]">
               <Linkedin />
             </div>
-            <div className="social">
+            <div className="social text-[#FED0BB]">
               <Instagram />
             </div>{" "}
-            <div className="social">
+            <div className="social text-[#FED0BB]">
               <Facebook />
             </div>
           </div>
@@ -352,48 +354,50 @@ export default function Home() {
 
         <div className="main-content-img-container">
           <img
-            src="images/loader5.jpeg"
+            src="images/loader6.jpg"
             alt="loader imgs"
             className="main-content-img"
           />
         </div>
       </div>
       <div className="flex justify-center w-full bg-[#FED0BB]">
-           <div className="flex flex-col max-w-[1200px] p-12 md:p-24 py-52 latest-news hide-div">
-        <p
-          className={cn(
-            "text-7xl font-bold py-7 text-[#540910]",
-            platpyi.className
-          )}
-        >
-          Latest News
-        </p>
-        <div className="flex flex-col items-center md:flex-row">
-          {latestNews.map((news, idx) => (
-            <div key={idx} className="m-4 p-2 rounded-sm shadow-2xl cursor-pointer bg-[#fff] w-full">
-              <img src={news.img_url} alt="news img" className="rounded-sm" />
-              <p
-                className={cn(
-                  "text-2xl font-bold text-slate-400  pt-2",
-                  platpyi.className
-                )}
+        <div className="flex flex-col max-w-[1200px] p-12 md:p-24 py-52 latest-news hide-div">
+          <p
+            className={cn(
+              "text-7xl font-bold py-7 text-[#540910]",
+              platpyi.className
+            )}
+          >
+            Projects
+          </p>
+          <div className="flex flex-col items-center md:flex-row">
+            {latestNews.map((news, idx) => (
+              <div
+                key={idx}
+                className="m-4 p-2 rounded-sm shadow-2xl cursor-pointer bg-[#fff] w-full"
               >
-                {news.title}
-              </p>
-              <p
-                className={cn(
-                  "text-xl font-bold text-[#000] ",
-                  manrope.className
-                )}
-              >
-                {news.description}
-              </p>
-            </div>
-          ))}
+                <img src={news.img_url} alt="news img" className="rounded-sm" />
+                <p
+                  className={cn(
+                    "text-2xl font-bold text-slate-400  pt-2",
+                    platpyi.className
+                  )}
+                >
+                  {news.title}
+                </p>
+                <p
+                  className={cn(
+                    "text-xl font-bold text-[#000] ",
+                    manrope.className
+                  )}
+                >
+                  {news.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-      </div>
-   
 
       <div className="flex flex-col items-center my-20 hide-div">
         {/* <div className="border border-sky-200 w-full mb-4" /> */}
@@ -403,8 +407,7 @@ export default function Home() {
             manrope.className
           )}
         >
-          I am no bird; and no net ensnares me; I am a free human being with
-          an independent will.  
+          Each time a woman stands up for herself, she stands up for all women
         </p>
 
         <p
@@ -413,43 +416,52 @@ export default function Home() {
             platpyi.className
           )}
         >
-          - Charlotte Bronte, Jane Eyre -
+          - Maya Angelou -
         </p>
         {/* <div className="border border-sky-200 w-full mt-4" /> */}
       </div>
 
-      <div className="flex flex-col md:flex-row items-center bg-[#FED0BB]  hide-div">
-        <div className="flex flex-1 w-[50%] flex-col items-center justify-center p-7">
-          <p
-            className={cn(
-              "text-4xl font-bold text-[#540910] p-3 text-center",
-              platpyi.className
-            )}
-          >
-            We Empower women to be the best versions of themselves.
-          </p>
-        </div>
-        <div className="flex flex-1 flex-col w-[50%]">
-          <img src={"images/loader3.jpg"} alt="news img" className=" " />
+      <div className="flex flex-col items-center w-full bg-[#FED0BB]  hide-div">
+        <div className="flex flex-col md:flex-row items-center max-w-[1200px]">
+          <div className="flex flex-1 w-[50%] flex-col items-center justify-center p-7">
+            <p
+              className={cn(
+                "text-4xl font-bold text-[#540910] p-3 text-center",
+                platpyi.className
+              )}
+            >
+              We Empower women to be the best versions of themselves.
+            </p>
+          </div>
+          <div className="flex flex-1 flex-col w-[50%]">
+            <img src={"images/loader3.jpg"} alt="news img" className=" " />
+          </div>
         </div>
       </div>
 
-      <div className="flex flex-col md:flex-row items-center text-[#FED0BB] hide-div">
-        <div className="flex flex-1 flex-col w-[50%]">
-          <img src={"images/loader2.jpg"} alt="news img" className="w-[100%]" />
-        </div>
-        <div className="flex flex-1 flex-col  w-[50%] items-center justify-center p-7">
-          <p
-            className={cn(
-              "text-4xl font-bold text-[#FED0BB] bg-[#540910] p-3 text-center",
-              platpyi.className
-            )}
-          >
-           Carrying prestige wherever we seem fit.
-          </p>
+      <div className="flex flex-col items-center w-full bg-[#540910]  hide-div">
+        <div className="flex flex-col md:flex-row items-center max-w-[1200px] bg-[#540910] ">
+          <div className="flex flex-1 flex-col w-[50%]">
+            <img
+              src={"images/loader2.jpg"}
+              alt="news img"
+              className="w-[100%]"
+            />
+          </div>
+          <div className="flex flex-1 flex-col  w-[50%] items-center justify-center p-7">
+            <p
+              className={cn(
+                "flex-1 text-4xl font-bold text-[#FED0BB] bg-[#540910] p-3 text-center",
+                platpyi.className
+              )}
+            >
+              Carrying prestige wherever we seem fit.
+            </p>
+          </div>
         </div>
       </div>
-      <div className="flex flex-col p-20 latest-news bg-[#FED0BB] text-[#540910] hide-div">
+   <ResizeHOC color="#FED0BB">
+   <div className="flex flex-col py-20 w-full latest-news text-[#540910] hide-div">
         <p
           className={cn(
             "text-7xl font-bold py-7 text-[#540910]",
@@ -460,7 +472,10 @@ export default function Home() {
         </p>
         <div className="flex flex-col items-center w-full">
           {latestNews.map((news, idx) => (
-            <div key={idx} className="m-4 p-2 rounded-sm shadow-xl bg-white cursor-pointer flex flex-col md:flex-row items-start w-full transition-all hover:mb-4">
+            <div
+              key={idx}
+              className="m-4 p-2 rounded-sm shadow-xl bg-white cursor-pointer flex flex-col md:flex-row items-start w-full transition-all hover:mb-4"
+            >
               <div className="w-full md:w-[200px]">
                 <img src={news.img_url} alt="news img" className="rounded-sm" />
               </div>
@@ -475,13 +490,13 @@ export default function Home() {
                 </p>
                 <p>{news.description}</p>
                 <p>{new Date().toDateString()}</p>
-           
               </div>
               <button>Register</button>
             </div>
           ))}
         </div>
       </div>
+   </ResizeHOC>
 
       <div className="flex flex-col md:flex-row bg-blue-600 hide-div">
         <div className="flex flex-1 flex-col items-center justify-center p-7">
@@ -509,7 +524,7 @@ export default function Home() {
           <img src={"images/loader5.jpeg"} alt="news img" className=" " />
         </div>
       </div>
-      <Footer />
+      <Footer /> 
     </div>
   );
 }

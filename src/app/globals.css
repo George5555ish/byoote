@@ -72,7 +72,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box; 
-  max-width: 100vw; 
+  max-width: 100vw;  
 }
 
 html,
@@ -164,15 +164,18 @@ body {
 }
 .main-content-img-container {
   position: relative;
+  top: -20px;
   width: 100%;
-  height: 100vh; 
+  height: 100vh;   
 }
 
 .main-content-img {
-  //position: absolute;
+  position: relative;
+
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100vh;
+  object-fit: cover;  
+  background: orange;
   //transform: scale(1.25)
 }
 
@@ -266,12 +269,14 @@ body {
   display: none; 
   position: relative;
   height: 100vh;
+ 
 }
 
 .socials {
   position: absolute;
   left: 98%;
   bottom: 200px;
+  color: 
 }
 .social{
 margin: .75em 0;cursor: pointer;transition: 0.35s ease}

@@ -21,8 +21,8 @@ function Navbar() {
   const menuLinks = [
     { path: "/", label: "Home" },
     { path: "/about", label: "About" },
-    // { path: "/services", label: "Services" },
-    // { path: "/contact", label: "Book An Appointment" },
+    { path: "/shop", label: "Shop" },
+    { path: "/donate", label: "Donate" },
   ];
 
   const container = useRef();
@@ -109,6 +109,24 @@ function Navbar() {
                     )}
                   >
                     Contact Us
+                  </a>
+                  <a
+                    href='/shop'
+                    className={cn(
+                      "text-slate-200 transition cursor-pointer hover:text-violet-300 p-3 mx-4 font-md",
+                      font.className
+                    )}
+                  >
+                    Shop
+                  </a>
+                  <a
+                    href='/donate'
+                    className={cn(
+                      "text-slate-200 transition cursor-pointer hover:text-violet-300 p-3 mx-4 font-md",
+                      font.className
+                    )}
+                  >
+                    Donate
                   </a>
                 </ul>
               </div>
